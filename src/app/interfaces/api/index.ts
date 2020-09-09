@@ -8,5 +8,6 @@ export * from './main-campaign.interface';
 export * from './prices.interface';
 export * from './producer.interface';
 export * from './product.interface';
+export * from './response';
 export * from './seo.interface';
 export * from './sommelier.interface';

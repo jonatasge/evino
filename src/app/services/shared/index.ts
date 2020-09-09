@@ -1,1 +1,2 @@
-export * from './crud.service';
+export * from './crud/crud.service';
+export * from './event-emitter/event-emitter.service';
