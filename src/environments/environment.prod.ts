@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  api: 'https://api.evino.com.br/catalog/v2',
 };
