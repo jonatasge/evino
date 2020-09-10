@@ -1,0 +1,9 @@
+<section id="body">
+  <div *ngIf="loading; else content" class="wrap-loading">
+    <img class="loading" src="assets/imgs/loading.gif" alt="Carregando..." />
+  </div>
+
+  <ng-template #content>
+    <ng-content></ng-content>
+  </ng-template>
+</section>

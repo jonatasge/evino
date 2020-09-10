@@ -1,0 +1,24 @@
+#body {
+  margin: auto;
+  max-width: 1200px;
+  min-height: calc(100vh - 160px);
+  padding: 15px;
+  position: relative;
+
+  @media (max-height: 599px) {
+    min-height: calc(100vh - 100px);
+  }
+
+  .wrap-loading {
+    align-items: center;
+    display: flex;
+    height: calc(100% - 30px);
+    justify-content: center;
+    position: absolute;
+    width: calc(100% - 30px);
+
+    .loading {
+      height: 70px;
+    }
+  }
+}

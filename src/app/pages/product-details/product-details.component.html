@@ -1,0 +1,33 @@
+<div id="productDetails">
+  <ev-image-slideshow
+    class="gallery"
+    [images]="images"
+    [primaryColor]="colors.primary"
+    [imageBackgroundColor]="colors.background"
+  ></ev-image-slideshow>
+
+  <div class="wrap-info">
+    <h1 class="name">{{ data?.name || "-" }}</h1>
+    <div class="wrap-chips">
+      <span class="chip">
+        <i class="material-icons" [style.color]="getWineColor(data?.type)">
+          {{ getWineIcon(data?.type) }}
+        </i>
+        {{ data?.type || "-" }}
+      </span>
+      <span class="chip">
+        <img class="icon" [src]="data?.countries[0]?.icon" />
+        {{ data?.countries[0]?.name || "-" }}
+      </span>
+    </div>
+  </div>
+
+  <div class="details">
+    <ev-data-sheet
+      *ngIf="!data?.bundleProducts.length; else kit"
+      [data]="data"
+    ></ev-data-sheet>
+
+    <ng-template #kit> OLÁ MUNDO </ng-template>
+  </div>
+</div>
