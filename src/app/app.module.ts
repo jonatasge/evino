@@ -2,6 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { AppCommonModule } from 'src/common/common.module';
 import { AppRoutingModule } from './app-routing.module';
 import {
   AppComponent,
@@ -9,8 +10,12 @@ import {
   FooterComponent,
   HeaderComponent,
 } from './components';
-import { ListProductsComponent, NotFoundComponent } from './pages';
-import { ProductDetailsComponent } from './pages/product-details/product-details.component';
+import {
+  ListProductsComponent,
+  NotFoundComponent,
+  ProductDetailsComponent,
+} from './pages';
+import { DataSheetComponent } from './pages/product-details/data-sheet/data-sheet.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +26,10 @@ import { ProductDetailsComponent } from './pages/product-details/product-details
     ListProductsComponent,
     NotFoundComponent,
     ProductDetailsComponent,
+    DataSheetComponent,
   ],
   imports: [
+    AppCommonModule,
     AppRoutingModule,
     BrowserModule,
     HttpClientModule,

@@ -11,7 +11,7 @@
         <img class="thumbnail" [src]="item.images.medium" alt="Imagem" />
       </div>
       <h1 class="name">{{ item.name }}</h1>
-      <p class="type">{{ item.countries[0]?.name }} - {{ item.type }}</p>
+      <p class="type">{{ item.producer?.country }} - {{ item.type }}</p>
       <span class="discount" *ngIf="item.discounts">
         {{ item.discounts.sale }}% OFF
       </span>

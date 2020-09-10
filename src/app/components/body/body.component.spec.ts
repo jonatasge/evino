@@ -17,7 +17,7 @@ describe('BodyComponent', () => {
     fixture.detectChanges();
   });
 
-  it('deve criar o componente', () => {
+  it('deve montar o componente', () => {
     expect(component).toBeTruthy();
   });
 });

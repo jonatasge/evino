@@ -1,9 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { EventEmitterService } from 'src/app/services/shared';
+import { unsubscribeAll } from 'src/common/helpers';
+import { EventEmitterService } from 'src/common/services';
 
 @Component({
-  selector: 'app-body',
+  selector: 'ev-body',
   templateUrl: './body.component.html',
   styleUrls: ['./body.component.scss'],
 })
@@ -16,7 +17,7 @@ export class BodyComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.unsubscribe();
+    unsubscribeAll(this.subscriptions);
   }
 
   subscribe(): void {
@@ -25,11 +26,5 @@ export class BodyComponent implements OnInit, OnDestroy {
       loading ? this.loading++ : this.loading--
     );
     this.subscriptions.push(subscription);
-  }
-
-  unsubscribe(): void {
-    this.subscriptions.forEach((subscription: Subscription) => {
-      subscription.unsubscribe();
-    });
   }
 }

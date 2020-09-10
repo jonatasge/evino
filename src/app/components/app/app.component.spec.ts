@@ -10,7 +10,7 @@ describe('AppComponent', () => {
     }).compileComponents();
   }));
 
-  it('deve criar o aplicativo', () => {
+  it('deve montar o aplicativo', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
@@ -27,7 +27,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
     expect(compiled.querySelector('.content span').textContent).toContain(
-      'evino app is running!'
+      'o aplicativo evino está rodando!'
     );
   });
 });

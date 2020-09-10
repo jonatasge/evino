@@ -1,3 +1,5 @@
+@import "src/app/styles/theme";
+
 #list {
   align-items: stretch;
   display: flex;
@@ -5,14 +7,16 @@
   flex-wrap: wrap;
 
   .item {
+    background-color: $background;
     border-radius: 7px;
     cursor: pointer;
+    margin: 5px;
     padding: 30px 15px;
     transition: all ease 0.4s;
     width: 30%;
 
     &:hover {
-      box-shadow: 0 2px 4px #cccccc;
+      background-color: rgba($primary, 0.05);
       transform: scale(1.03);
     }
 
@@ -64,7 +68,7 @@
       }
 
       .discount {
-        background-color: red;
+        background-color: $primary;
         border-radius: 5px;
         color: white;
         font-size: 12px;

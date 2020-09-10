@@ -1,0 +1,7 @@
+<div class="bar-note">
+  <div
+    *ngFor="let item of repeat(note.of); let i = index"
+    [style.backgroundColor]="i < note.value && primaryColor"
+    class="note"
+  ></div>
+</div>
