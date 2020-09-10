@@ -9,15 +9,11 @@ import { IBarNote } from './bar-note.interface';
 export class BarNoteComponent {
   @Input() note: IBarNote;
   @Input() primaryColor = 'black';
+  @Input() backgroundColor = '#f0f0f0';
 
   constructor() {}
 
   repeat(n: number): any[] {
     return Array(n);
-  }
-
-  c(x) {
-    console.log(x);
-    return x;
   }
 }

@@ -27,6 +27,6 @@ export const wineIcon = (type: string): string => {
     case 'espumante rosé':
       return 'local_bar';
     default:
-      return 'emoji_food_beverage';
+      return 'fastfood';
   }
 };

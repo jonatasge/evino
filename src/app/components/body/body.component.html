@@ -1,9 +1,17 @@
 <section id="body">
-  <div *ngIf="loading; else content" class="wrap-loading">
+  <div *ngIf="loading" class="wrap-loading">
     <img class="loading" src="assets/imgs/loading.gif" alt="Carregando..." />
   </div>
 
-  <ng-template #content>
-    <ng-content></ng-content>
-  </ng-template>
+  <div *ngIf="error" class="container">
+    <div class="wrap-content">
+      <span class="figure">:(</span>
+      <h1 class="message">
+        Ops! Parece que deu algo errado... <br />
+        Tente novamente mais tarde
+      </h1>
+    </div>
+  </div>
+
+  <ng-content *ngIf="!loading && !error"></ng-content>
 </section>

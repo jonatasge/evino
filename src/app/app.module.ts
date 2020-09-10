@@ -15,18 +15,24 @@ import {
   NotFoundComponent,
   ProductDetailsComponent,
 } from './pages';
-import { DataSheetComponent } from './pages/product-details/data-sheet/data-sheet.component';
+import {
+  AboutComponent,
+  DataSheetComponent,
+  ShortDataSheetComponent,
+} from './pages/product-details/components';
 
 @NgModule({
   declarations: [
+    AboutComponent,
     AppComponent,
     BodyComponent,
+    DataSheetComponent,
     FooterComponent,
     HeaderComponent,
     ListProductsComponent,
     NotFoundComponent,
     ProductDetailsComponent,
-    DataSheetComponent,
+    ShortDataSheetComponent,
   ],
   imports: [
     AppCommonModule,

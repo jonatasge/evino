@@ -5,7 +5,11 @@
   [infiniteScrollThrottle]="50"
   (scrolled)="onScroll()"
 >
-  <div *ngFor="let item of list" class="item" [routerLink]="'product/' + item.url">
+  <div
+    *ngFor="let item of list"
+    class="item"
+    [routerLink]="'product/' + item.url"
+  >
     <div class="wrap-content">
       <div class="wrap-thumbnail">
         <img class="thumbnail" [src]="item.images.medium" alt="Imagem" />

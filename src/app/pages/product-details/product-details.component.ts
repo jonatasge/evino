@@ -7,6 +7,7 @@ import { ProductService } from 'src/app/services/api';
 import { theme } from 'src/app/styles/theme';
 import { IImageSlideshow } from 'src/common/components';
 import { unsubscribeAll } from 'src/common/helpers';
+import { EventEmitterService } from 'src/common/services';
 
 @Component({
   selector: 'ev-product-details',
@@ -17,8 +18,8 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
   private subscriptions: Subscription[] = [];
   private id: string;
   colors = theme;
-  images: IImageSlideshow[];
   data: IProduct;
+  images: IImageSlideshow[];
 
   constructor(
     protected activatedRoute: ActivatedRoute,
@@ -30,6 +31,7 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    EventEmitterService.get('error').emit(false);
     unsubscribeAll(this.subscriptions);
   }
 
@@ -44,14 +46,19 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
   }
 
   read(): void {
-    this.service.find(this.id).subscribe((response: IResponse<IProduct>) => {
-      this.data = response.data;
+    EventEmitterService.get('loading').emit(true);
+    this.service.find(this.id).subscribe(
+      (response: IResponse<IProduct>) => {
+        EventEmitterService.get('loading').emit(false);
 
-      const images = response.data?.bundleProducts.map(
-        (product: IProduct) => product.images
-      );
-      this.images = [response.data?.images, ...images];
-    });
+        this.data = response.data;
+        const images = response.data?.bundleProducts.map(
+          (product: IProduct) => product.images
+        );
+        this.images = [response.data?.images, ...images];
+      },
+      (error: any) => EventEmitterService.get('error').emit(true)
+    );
   }
 
   getWineColor(type: string): string {

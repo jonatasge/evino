@@ -1,5 +1,8 @@
 export const theme = {
-  background: '#FFFFFF',
-  primary: '#DF0021',
+  background: '#ffffff',
+  backgroundContrast: '#dddddd',
+  primary: '#df0021',
+  primaryContrast: '#ffffff',
   secondary: '#333333',
+  secondaryContrast: '#ffffff',
 };

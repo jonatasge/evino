@@ -1,11 +1,11 @@
 export interface ISommelier {
-  color: null;
-  commentary: null;
-  gender: null;
-  keepUntil: null;
+  color: string;
+  commentary: string;
+  gender: string;
+  keepUntil: number;
   maturing: null;
-  mouth: null;
-  nose: null;
-  picture: null;
-  reviewer: null;
+  mouth: string;
+  nose: string;
+  picture: string;
+  reviewer: string;
 }

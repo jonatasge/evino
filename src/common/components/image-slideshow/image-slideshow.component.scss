@@ -1,7 +1,6 @@
 .slideshow {
   .container {
     display: none;
-    height: 200px;
     position: relative;
 
     &.active {
@@ -17,23 +16,24 @@
     &.full-screen {
       .wrap-image {
         cursor: zoom-out;
-        height: 100vh;
+        height: 100vh !important;
         left: 0;
         margin-top: 0;
         position: fixed;
         top: 0;
         transition: all ease 0.5s, margin-top 0s, top 0.5s ease 0.05s;
         width: 100vw;
+        z-index: 999;
 
         .background {
-          height: 100%;
+          height: 100% !important;
           max-width: 100%;
           padding: 65px;
           transform: scale(0.75);
           width: 100%;
 
           .image {
-            height: 100%;
+            height: 100% !important;
             transform: scale(1.5);
           }
         }
@@ -42,29 +42,24 @@
 
     .wrap-image {
       cursor: zoom-in;
-      height: 200px;
       margin-top: -135px;
       position: absolute;
       top: 135px;
       transition: all ease 0.5s, margin-top 0s, top 0.3s ease, width ease 0.3s;
       width: 100%;
-      z-index: 1;
 
       .background {
         border-radius: 10px;
         transform: scale(0.8);
         transition: all ease 0.5s;
-        height: 200px;
         margin: auto;
         max-width: 400px;
         width: 100%;
 
         .image {
-          background-color: transparent;
           background-position: center;
           background-repeat: no-repeat;
           background-size: contain;
-          height: 200px;
           transform: scale(1.25);
           transition: all ease 0.5s;
           width: auto;
@@ -76,6 +71,12 @@
   .wrap-thumbnails {
     margin-top: 60px;
     text-align: center;
+
+    @media (max-width: 767px) {
+      height: 81px;
+      overflow: auto hidden;
+      white-space: nowrap;
+    }
 
     .thumbnail {
       border: 1px solid;

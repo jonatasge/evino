@@ -11,6 +11,7 @@ import { EventEmitterService } from 'src/common/services';
 export class BodyComponent implements OnInit, OnDestroy {
   private subscriptions: Subscription[] = [];
   loading = 0;
+  error = false;
 
   ngOnInit(): void {
     this.subscribe();
@@ -21,10 +22,21 @@ export class BodyComponent implements OnInit, OnDestroy {
   }
 
   subscribe(): void {
-    const event = EventEmitterService.get('loading');
-    const subscription = event.subscribe((loading: boolean) =>
+    const subscriptionLoading = EventEmitterService.get(
+      'loading'
+    ).subscribe((loading: boolean) =>
       loading ? this.loading++ : this.loading--
     );
-    this.subscriptions.push(subscription);
+
+    const subscriptionError = EventEmitterService.get('error').subscribe(
+      (error: boolean) => {
+        this.error = error;
+        if (error) {
+          this.loading--;
+        }
+      }
+    );
+
+    this.subscriptions.push(subscriptionLoading, subscriptionError);
   }
 }

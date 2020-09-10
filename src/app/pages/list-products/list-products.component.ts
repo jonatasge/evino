@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IMeta, IProduct, IResponseList } from 'src/app/interfaces/api';
-import { ProductService } from 'src/app/services/api';
 import { IHttpClientOptions } from 'src/app/interfaces/shared';
+import { ProductService } from 'src/app/services/api';
 import { EventEmitterService } from 'src/common/services';
 
 @Component({
@@ -24,15 +24,16 @@ export class ListProductsComponent implements OnInit {
       EventEmitterService.get('loading').emit(true);
     }
 
-    this.service
-      .read(options)
-      .subscribe((response: IResponseList<IProduct>) => {
+    this.service.read(options).subscribe(
+      (response: IResponseList<IProduct>) => {
         if (!this.list.length) {
           EventEmitterService.get('loading').emit(false);
         }
         this.list = [...this.list, ...response.data.products];
         this.meta = response.data.meta;
-      });
+      },
+      (error: any) => EventEmitterService.get('error').emit(true)
+    );
   }
 
   onScroll(): void {

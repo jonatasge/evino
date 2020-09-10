@@ -8,6 +8,7 @@ import { IPrices } from './prices.interface';
 import { IProducer } from './producer.interface';
 import { ISeo } from './seo.interface';
 import { ISommelier } from './sommelier.interface';
+import { IGrape } from './grape.interface';
 
 export interface IProduct {
   aboutThisWine?: string;
@@ -23,7 +24,7 @@ export interface IProduct {
   exclusiveStore?: [];
   expiration?: string;
   grapeList?: null;
-  grapes?: [];
+  grapes?: IGrape[];
   harmonization?: null;
   images?: IImages;
   intensity?: string;
@@ -37,7 +38,7 @@ export interface IProduct {
   parentBundles?: [];
   price?: number;
   prices?: IPrices;
-  prizesAndMedals?: null;
+  prizesAndMedals?: string[];
   prizesMedals?: null;
   producer?: IProducer;
   quantity?: number;

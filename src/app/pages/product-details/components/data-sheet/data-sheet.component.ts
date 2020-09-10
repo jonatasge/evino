@@ -1,7 +1,9 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { IDatasheet, IProduct } from 'src/app/interfaces/api';
+import { IDatasheet, IGrape, IProduct } from 'src/app/interfaces/api';
 import { theme } from 'src/app/styles/theme';
 import { IBarNote } from 'src/common/components';
+import { environment } from 'src/environments/environment';
+import { getEvinoIconClass } from 'src/app/helpers';
 
 @Component({
   selector: 'ev-data-sheet',
@@ -18,8 +20,11 @@ export class DataSheetComponent implements OnChanges {
   infos: {
     icon: string;
     label: string;
-    value: string;
+    value: string | number;
   }[] = [];
+  premiationsUrl =
+    environment.assets.image +
+    '/dpr_1.0,w_64,f_auto,q_auto:best/v1/web/assets/premiations/';
 
   constructor() {}
 
@@ -66,25 +71,47 @@ export class DataSheetComponent implements OnChanges {
   ): {
     icon: string;
     label: string;
-    value: string;
+    value: string | number;
   }[] {
     return [
       { icon: 'glass', label: 'Tipo de vinho', value: data?.type },
-      { icon: 'worlds', label: '', value: '' },
-      { icon: 'pin', label: '', value: '' },
-      { icon: 'percentage', label: '', value: '' },
-      { icon: 'corkscrew', label: '', value: '' },
-      { icon: 'winery', label: '', value: '' },
-      { icon: 'temperature', label: '', value: '' },
-      { icon: 'drop', label: '', value: '' },
-      { icon: 'grape', label: '', value: '' },
-      { icon: 'vintage', label: '', value: '' },
-      { icon: 'bottles', label: '', value: '' },
-      { icon: 'medal', label: '', value: '' },
+      { icon: 'world', label: 'País', value: data?.producer?.country },
+      { icon: 'pin', label: 'Região', value: data?.producer?.region },
+      {
+        icon: 'percentage',
+        label: 'Teor alcoólico',
+        value: data?.alcoholContent,
+      },
+      {
+        icon: 'corkscrew',
+        label: 'Tipo de fechamento',
+        value: data?.closureType,
+      },
+      { icon: 'winery', label: 'Produtor', value: data?.producer?.name },
+      {
+        icon: 'temperature',
+        label: 'Serviço',
+        value: data?.servingTemperature,
+      },
+      { icon: 'drop', label: 'Volume', value: data?.volume },
+      {
+        icon: 'grape',
+        label: 'Uvas',
+        value: data?.grapes
+          ?.reduce((r: string, grape: IGrape) => r + ', ' + grape?.name, '')
+          .substr(2),
+      },
+      { icon: 'vintage', label: 'Safra', value: data?.vintage },
+      {
+        icon: 'bottles',
+        label: 'Potencial de guarda',
+        value: data?.sommelier?.keepUntil,
+      },
+      { icon: 'medal', label: 'Premiações', value: data?.prizesMedals },
     ];
   }
 
-  handleIcon(icon: string): any {
-    return { ['ev-' + icon]: true };
+  handleIcon(name: string): any {
+    return { [getEvinoIconClass(name)]: true };
   }
 }

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { hexToRgb } from 'src/common/helpers';
+import { getBiggerImage, getSmallerImage, hexToRgb } from 'src/common/helpers';
 import { IImageSlideshow } from './image-slideshow.interface';
 
 @Component({
@@ -8,26 +8,23 @@ import { IImageSlideshow } from './image-slideshow.interface';
   styleUrls: ['./image-slideshow.component.scss'],
 })
 export class ImageSlideshowComponent {
-  @Input() images: IImageSlideshow[] = [];
-  @Input() showImage = 0;
-  @Input() primaryColor = 'black';
+  @Input() height = '200px';
   @Input() imageBackgroundColor = 'white';
+  @Input() images: IImageSlideshow[] = [];
+  @Input() primaryColor = 'black';
+  @Input() showImage = 0;
+  @Input() showThumbnails = true;
   private sizes = ['extralarge', 'large', 'medium', 'small'];
   fullScreenMode = false;
 
   constructor() {}
 
-  getBiggerImage(item: IImageSlideshow): string {
-    return this.sizes
-      .map((size: string) => (item[size] ? item[size] : 0))
-      .filter((value: string) => value)[0];
+  getBiggerImage(item: IImageSlideshow, sizes: string[] = this.sizes): string {
+    return getBiggerImage(item, sizes);
   }
 
-  getSmallerImage(item: IImageSlideshow): string {
-    return [...this.sizes]
-      .reverse()
-      .map((size: string) => (item[size] ? item[size] : 0))
-      .filter((value: string) => value)[0];
+  getSmallerImage(item: IImageSlideshow, sizes: string[] = this.sizes): string {
+    return getSmallerImage(item, sizes);
   }
 
   handleThumbnailBackgroundColor(color: string): string {
