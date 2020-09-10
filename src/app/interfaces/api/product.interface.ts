@@ -8,10 +8,7 @@ import { IPrices } from './prices.interface';
 import { IProducer } from './producer.interface';
 import { ISeo } from './seo.interface';
 import { ISommelier } from './sommelier.interface';
-<<<<<<< HEAD
-=======
 import { IGrape } from './grape.interface';
->>>>>>> parent of b00eff0... Auto-generated commit
 
 export interface IProduct {
   aboutThisWine?: string;
@@ -27,11 +24,7 @@ export interface IProduct {
   exclusiveStore?: [];
   expiration?: string;
   grapeList?: null;
-<<<<<<< HEAD
-  grapes?: [];
-=======
   grapes?: IGrape[];
->>>>>>> parent of b00eff0... Auto-generated commit
   harmonization?: null;
   images?: IImages;
   intensity?: string;
@@ -45,11 +38,7 @@ export interface IProduct {
   parentBundles?: [];
   price?: number;
   prices?: IPrices;
-<<<<<<< HEAD
-  prizesAndMedals?: null;
-=======
   prizesAndMedals?: string[];
->>>>>>> parent of b00eff0... Auto-generated commit
   prizesMedals?: null;
   producer?: IProducer;
   quantity?: number;

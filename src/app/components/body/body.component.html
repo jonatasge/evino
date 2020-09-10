@@ -1,13 +1,4 @@
 <section id="body">
-<<<<<<< HEAD
-  <div *ngIf="loading; else content" class="wrap-loading">
-    <img class="loading" src="assets/imgs/loading.gif" alt="Carregando..." />
-  </div>
-
-  <ng-template #content>
-    <ng-content></ng-content>
-  </ng-template>
-=======
   <div *ngIf="loading" class="wrap-loading">
     <img class="loading" src="assets/imgs/loading.gif" alt="Carregando..." />
   </div>
@@ -23,5 +14,4 @@
   </div>
 
   <ng-content *ngIf="!loading && !error"></ng-content>
->>>>>>> parent of b00eff0... Auto-generated commit
 </section>

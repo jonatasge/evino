@@ -5,15 +5,11 @@
   [infiniteScrollThrottle]="50"
   (scrolled)="onScroll()"
 >
-<<<<<<< HEAD
-  <div *ngFor="let item of list" class="item" [routerLink]="'product/' + item.url">
-=======
   <div
     *ngFor="let item of list"
     class="item"
     [routerLink]="'product/' + item.url"
   >
->>>>>>> parent of b00eff0... Auto-generated commit
     <div class="wrap-content">
       <div class="wrap-thumbnail">
         <img class="thumbnail" [src]="item.images.medium" alt="Imagem" />

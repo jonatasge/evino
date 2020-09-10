@@ -8,10 +8,6 @@
 
   <div class="wrap-info">
     <h1 class="name">{{ data?.name || "-" }}</h1>
-<<<<<<< HEAD
-=======
-
->>>>>>> parent of b00eff0... Auto-generated commit
     <div class="wrap-chips">
       <span class="chip">
         <i class="material-icons" [style.color]="getWineColor(data?.type)">
@@ -24,17 +20,6 @@
         {{ data?.countries[0]?.name || "-" }}
       </span>
     </div>
-<<<<<<< HEAD
-  </div>
-
-  <div class="details">
-    <ev-data-sheet
-      *ngIf="!data?.bundleProducts.length; else kit"
-      [data]="data"
-    ></ev-data-sheet>
-
-    <ng-template #kit> OLÁ MUNDO </ng-template>
-=======
 
     <a class="buy">Comprar</a>
   </div>
@@ -54,6 +39,5 @@
         class="short-details"
       ></ev-short-data-sheet>
     </ng-template>
->>>>>>> parent of b00eff0... Auto-generated commit
   </div>
 </div>

@@ -2,52 +2,34 @@
   <div
     *ngFor="let item of images; let i = index"
     [ngClass]="{ active: i === showImage, 'full-screen': fullScreenMode }"
-<<<<<<< HEAD
-=======
     [style.height]="height"
->>>>>>> parent of b00eff0... Auto-generated commit
     class="container"
   >
     <div
       (click)="fullScreenMode = !fullScreenMode"
       [style.backgroundColor]="imageBackgroundColor"
-<<<<<<< HEAD
-=======
       [style.height]="height"
->>>>>>> parent of b00eff0... Auto-generated commit
       class="wrap-image"
     >
       <div
         [style.backgroundColor]="handleThumbnailBackgroundColor(primaryColor)"
-<<<<<<< HEAD
-=======
         [style.height]="height"
->>>>>>> parent of b00eff0... Auto-generated commit
         class="background"
       >
         <div
           [style.backgroundImage]="'url(' + getBiggerImage(item) + ')'"
-<<<<<<< HEAD
-=======
           [style.height]="height"
->>>>>>> parent of b00eff0... Auto-generated commit
           class="image"
         ></div>
       </div>
     </div>
   </div>
 
-<<<<<<< HEAD
-  <div class="wrap-thumbnails">
-    <div
-      *ngFor="let item of images; let i = index"
-=======
   <div
   *ngIf="showThumbnails"
    class="wrap-thumbnails">
     <div
       *ngFor="let item of images || []; let i = index"
->>>>>>> parent of b00eff0... Auto-generated commit
       (click)="showImage = i"
       [ngClass]="{ active: i === showImage }"
       [style.borderColor]="primaryColor"

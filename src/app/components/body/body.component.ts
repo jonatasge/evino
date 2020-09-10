@@ -11,10 +11,7 @@ import { EventEmitterService } from 'src/common/services';
 export class BodyComponent implements OnInit, OnDestroy {
   private subscriptions: Subscription[] = [];
   loading = 0;
-<<<<<<< HEAD
-=======
   error = false;
->>>>>>> parent of b00eff0... Auto-generated commit
 
   ngOnInit(): void {
     this.subscribe();
@@ -25,13 +22,6 @@ export class BodyComponent implements OnInit, OnDestroy {
   }
 
   subscribe(): void {
-<<<<<<< HEAD
-    const event = EventEmitterService.get('loading');
-    const subscription = event.subscribe((loading: boolean) =>
-      loading ? this.loading++ : this.loading--
-    );
-    this.subscriptions.push(subscription);
-=======
     const subscriptionLoading = EventEmitterService.get(
       'loading'
     ).subscribe((loading: boolean) =>
@@ -48,6 +38,5 @@ export class BodyComponent implements OnInit, OnDestroy {
     );
 
     this.subscriptions.push(subscriptionLoading, subscriptionError);
->>>>>>> parent of b00eff0... Auto-generated commit
   }
 }
