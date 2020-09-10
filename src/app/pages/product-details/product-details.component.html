@@ -8,6 +8,10 @@
 
   <div class="wrap-info">
     <h1 class="name">{{ data?.name || "-" }}</h1>
+<<<<<<< HEAD
+=======
+
+>>>>>>> parent of b00eff0... Auto-generated commit
     <div class="wrap-chips">
       <span class="chip">
         <i class="material-icons" [style.color]="getWineColor(data?.type)">
@@ -20,6 +24,7 @@
         {{ data?.countries[0]?.name || "-" }}
       </span>
     </div>
+<<<<<<< HEAD
   </div>
 
   <div class="details">
@@ -29,5 +34,26 @@
     ></ev-data-sheet>
 
     <ng-template #kit> OLÁ MUNDO </ng-template>
+=======
+
+    <a class="buy">Comprar</a>
+  </div>
+
+  <div class="details">
+    <ng-container *ngIf="!data?.isBundle; else bundle">
+      <ev-data-sheet [data]="data"></ev-data-sheet>
+      <ev-about [sommelier]="data?.sommelier"></ev-about>
+    </ng-container>
+
+    <ng-template #bundle>
+      <h1 class="section-title">Sobre o kit</h1>
+      <p>{{data?.aboutThisWine}}</p>
+      <ev-short-data-sheet
+        *ngFor="let item of data?.bundleProducts"
+        [data]="item"
+        class="short-details"
+      ></ev-short-data-sheet>
+    </ng-template>
+>>>>>>> parent of b00eff0... Auto-generated commit
   </div>
 </div>

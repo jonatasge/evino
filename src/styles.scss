@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import "src/app/styles/main";
+
+* {
+  box-sizing: border-box;
+
+  &:focus {
+    outline: $primary auto 1px;
+  }
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+body {
+  background-color: $background;
+  font-family: "Poppins", sans-serif;
+}

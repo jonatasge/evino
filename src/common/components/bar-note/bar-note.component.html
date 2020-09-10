@@ -2,6 +2,10 @@
   <div
     *ngFor="let item of repeat(note.of); let i = index"
     [style.backgroundColor]="i < note.value && primaryColor"
+<<<<<<< HEAD
+=======
+    [style.backgroundColor]="i >= note.value && backgroundColor"
+>>>>>>> parent of b00eff0... Auto-generated commit
     class="note"
   ></div>
 </div>

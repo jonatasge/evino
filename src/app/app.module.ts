@@ -15,18 +15,37 @@ import {
   NotFoundComponent,
   ProductDetailsComponent,
 } from './pages';
+<<<<<<< HEAD
 import { DataSheetComponent } from './pages/product-details/data-sheet/data-sheet.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BodyComponent,
+=======
+import {
+  AboutComponent,
+  DataSheetComponent,
+  ShortDataSheetComponent,
+} from './pages/product-details/components';
+
+@NgModule({
+  declarations: [
+    AboutComponent,
+    AppComponent,
+    BodyComponent,
+    DataSheetComponent,
+>>>>>>> parent of b00eff0... Auto-generated commit
     FooterComponent,
     HeaderComponent,
     ListProductsComponent,
     NotFoundComponent,
     ProductDetailsComponent,
+<<<<<<< HEAD
     DataSheetComponent,
+=======
+    ShortDataSheetComponent,
+>>>>>>> parent of b00eff0... Auto-generated commit
   ],
   imports: [
     AppCommonModule,

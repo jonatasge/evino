@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+=======
+@import "src/app/styles/theme";
+
+>>>>>>> parent of b00eff0... Auto-generated commit
 #body {
   margin: auto;
   max-width: 1200px;
@@ -21,4 +26,35 @@
       height: 70px;
     }
   }
+<<<<<<< HEAD
+=======
+
+  .container {
+    align-items: center;
+    display: flex;
+    height: calc(100% - 30px);
+    justify-content: center;
+    position: absolute;
+    width: calc(100% - 30px);
+
+    .wrap-content {
+      text-align: center;
+
+      .figure {
+        color: #ff1d25;
+        display: block;
+        font-size: 20vh;
+      }
+
+      .message {
+        font-size: 22px;
+        font-weight: normal;
+
+        @media (max-width: 499px) {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+>>>>>>> parent of b00eff0... Auto-generated commit
 }

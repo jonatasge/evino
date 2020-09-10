@@ -3,6 +3,14 @@
         "datasheet",
         "evino",
         "extralarge",
+<<<<<<< HEAD
         "imgs"
+=======
+        "imgs",
+        "premiation",
+        "premiations",
+        "wrap",
+        "wrap premiations"
+>>>>>>> parent of b00eff0... Auto-generated commit
     ]
 }

@@ -5,6 +5,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+<<<<<<< HEAD
+=======
+  margin-bottom: 42px;
+>>>>>>> parent of b00eff0... Auto-generated commit
 
   .gallery,
   .wrap-info {
@@ -19,6 +23,13 @@
     .name {
       font-weight: 100;
       font-size: 36px;
+<<<<<<< HEAD
+=======
+
+      @media (max-width: 1023px) {
+        font-size: 22px;
+      }
+>>>>>>> parent of b00eff0... Auto-generated commit
     }
 
     .wrap-chips {
@@ -45,6 +56,7 @@
 
         .material-icons,
         .icon {
+<<<<<<< HEAD
           font-size: 24px;
           height: 24px;
           margin-right: 3px;
@@ -52,10 +64,39 @@
         }
       }
     }
+=======
+          font-size: 20px;
+          height: 20px;
+          margin-right: 3px;
+          width: 20px;
+        }
+      }
+    }
+
+    .buy {
+      background-color: $primary;
+      border-radius: 25px;
+      color: $primaryContrast;
+      cursor: pointer;
+      display: block;
+      margin-top: 30px;
+      padding: 7px;
+      text-align: center;
+      width: 100%;
+    }
+>>>>>>> parent of b00eff0... Auto-generated commit
   }
 
   .details {
     margin-top: 56px;
     width: 100%;
+<<<<<<< HEAD
+=======
+
+    .short-details {
+      display: block;
+      margin-top: 56px;
+    }
+>>>>>>> parent of b00eff0... Auto-generated commit
   }
 }
